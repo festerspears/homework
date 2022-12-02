@@ -40,6 +40,8 @@ This repository includes the scaffolding of a Spring Boot project with Spring MV
 
 ## Guardrails and Guidance ##
 
+* We have provided sample data to help you understand the problem and expected output. This data can also be used to help you determine the calculations and tests for the rolling three-month average and aggregated two-year rolling three month average results. The file is included in this repository. See ./sample_bandwidth_data.csv.
+
 * You may use any relational database system.
 
 * H2 or another in-memory database is an acceptable solution for this exercise. We're interested in your schema design not whether you can set up an RDMS.
