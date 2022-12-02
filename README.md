@@ -56,6 +56,26 @@ This repository includes the scaffolding of a Spring Boot project with Spring MV
 
 * Comments are a good thing. Please feel free to add your thoughts to parts of the code that could use some context. That will help during our code review and the following technical interview. We are particularly interested in your assumptions and trade-off considerations.
 
+* A few interesting commands.
+
+Run your tests.
+
+```bash
+./gradlew test
+```
+
+Build the project.
+
+```bash
+./gradlew build
+```
+
+Run the project.
+
+```bash
+./gradlew bootRun
+```
+
 ## Questions? ##
 
 If you have questions about the assignment please talk to your recruiter. They will contact the person who can help you and arrange for you to speak with them.
