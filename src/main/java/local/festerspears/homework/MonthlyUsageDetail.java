@@ -24,6 +24,23 @@ public final class MonthlyUsageDetail {
         return this.usage;
     }
 
+    public int compareByAge(MonthlyUsageDetail thatDetail) {
+        int result = 0;
+        int thisMonth = MonthTranscoder.toInt(this.getMonth());
+        int thatMonth = MonthTranscoder.toInt(thatDetail.getMonth());
+        if (this.getYear() < thatDetail.getYear()) {
+            result = 1;
+        } else if (this.getYear() > thatDetail.getYear()) {
+            result = -1;
+        } else if (thisMonth < thatMonth) {
+            result = 1;
+        } else if (thisMonth > thatMonth) {
+            result = -1;
+        }
+
+        return result;
+    }
+
     @Override
     public boolean equals(Object obj) {
         MonthlyUsageDetail usageDetail = (MonthlyUsageDetail) obj;

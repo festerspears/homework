@@ -19,4 +19,8 @@ public final class CustomerUsageReport {
     public List<MonthlyUsageDetail> getMonthlyUsageDetails() {
         return this.monthlyUsageDetails;
     }
+
+    public double getLastThreeMonthsRollingAvg() {
+        return RollingAverageCalculator.threeMonthRollingAvg(this.monthlyUsageDetails);
+    }
 }
