@@ -4,15 +4,15 @@ import java.util.List;
 
 public final class CustomerUsageReport {
 
-    private final String customerId;
+    private final long customerId;
     private final List<MonthlyUsageDetail> monthlyUsageDetails;
 
-    public CustomerUsageReport(String custId, List<MonthlyUsageDetail> monthlyUsageDetails) {
-        this.customerId = custId;
+    public CustomerUsageReport(long customerId, List<MonthlyUsageDetail> monthlyUsageDetails) {
+        this.customerId = customerId;
         this.monthlyUsageDetails = monthlyUsageDetails;
     }
 
-    public String getCustomerId() {
+    public long getCustomerId() {
         return this.customerId;
     }
 

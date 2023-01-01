@@ -9,15 +9,17 @@ import org.junit.jupiter.api.Test;
 
 public class RollingAverageCalculatorTests {
 
+    private long testCustId = 1234;
+
     @Test
     public void threeMonthRollingAvgReturnsCorrectValueWhenGreaterThanThreeMonthsOfUsageDetailsWithBigGap()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2005, 1.97));
-        testUsageDetails.add(new MonthlyUsageDetail("December", 2002, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2005, 3.14));
-        testUsageDetails.add(new MonthlyUsageDetail("November", 2002, 0.63));
-        testUsageDetails.add(new MonthlyUsageDetail("October", 2002, 2.76));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2005, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "December", 2002, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2005, 3.14));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "November", 2002, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "October", 2002, 2.76));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -28,10 +30,10 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenGreaterThanThreeMonthsOfUsageDetailsWithYearRollover()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 1.97));
-        testUsageDetails.add(new MonthlyUsageDetail("December", 2002, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 3.14));
-        testUsageDetails.add(new MonthlyUsageDetail("November", 2002, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "December", 2002, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 3.14));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "November", 2002, 0.63));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -42,10 +44,10 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenGreaterThanThreeMonthsOfUsageDetailsReverseOrderedByDate()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 0.63));
-        testUsageDetails.add(new MonthlyUsageDetail("March", 2003, 1.97));
-        testUsageDetails.add(new MonthlyUsageDetail("April", 2003, 3.14));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "March", 2003, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "April", 2003, 3.14));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -56,10 +58,10 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenGreaterThanThreeMonthsOfUsageDetailsUnorderedByDate()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("March", 2003, 1.97));
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("April", 2003, 3.14));
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "March", 2003, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "April", 2003, 3.14));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 0.63));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -70,10 +72,10 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenGreaterThanThreeMonthsOfUsageDetailsOrderedByDate()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("April", 2003, 3.14));
-        testUsageDetails.add(new MonthlyUsageDetail("March", 2003, 1.97));
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 0.63));
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "April", 2003, 3.14));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "March", 2003, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -84,9 +86,9 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenThreeMonthsOfUsageDetails()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 0.63));
-        testUsageDetails.add(new MonthlyUsageDetail("March", 2003, 1.97));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "March", 2003, 1.97));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -96,8 +98,8 @@ public class RollingAverageCalculatorTests {
     @Test
     public void threeMonthRollingAvgReturnsCorrectValueWhenTwoMonthsOfUsageDetails() throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
-        testUsageDetails.add(new MonthlyUsageDetail("February", 2003, 0.63));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "February", 2003, 0.63));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 
@@ -108,7 +110,7 @@ public class RollingAverageCalculatorTests {
     public void threeMonthRollingAvgReturnsCorrectValueWhenSingleMonthOfUsageDetails()
             throws Exception {
         List<MonthlyUsageDetail> testUsageDetails = new ArrayList<>();
-        testUsageDetails.add(new MonthlyUsageDetail("January", 2003, 4.27));
+        testUsageDetails.add(new MonthlyUsageDetail(testCustId, "January", 2003, 4.27));
 
         double result = RollingAverageCalculator.threeMonthRollingAvg(testUsageDetails);
 

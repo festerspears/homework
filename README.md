@@ -58,10 +58,34 @@ This repository includes the scaffolding of a Spring Boot project with Spring MV
 
 * A few interesting commands.
 
-Run your tests.
+Run the tests.
 
 ```bash
 ./gradlew test
+```
+
+Run the tests continuously.
+
+```bash
+./gradlew -t test
+```
+
+Run the repository tests continuously.
+
+```bash
+./gradlew -t repotest
+```
+
+Run fast tests (no repo, no integration) continuously.
+
+```bash
+./gradlew -t fastTest
+```
+
+Run specific test file continuously.
+
+```bash
+./gradlew -t <Name Of Test File> (e.g., CustomerUsageControllerTests)
 ```
 
 Build the project.

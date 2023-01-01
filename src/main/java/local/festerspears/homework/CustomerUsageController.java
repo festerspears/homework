@@ -12,7 +12,7 @@ public class CustomerUsageController {
     private CustomerUsageRepository customerUsageRepository;
 
     @GetMapping("/customers/{customerId}/usage")
-    public CustomerUsageReport customerUsageById(@PathVariable("customerId") String customerId) {
+    public CustomerUsageReport customerUsageById(@PathVariable("customerId") long customerId) {
         return customerUsageRepository.customerUsageReport(customerId);
     }
 }
