@@ -90,6 +90,7 @@ public final class MonthlyUsageDetail {
 
     @Override
     public String toString() {
-        return String.format("{%s, %s, %s}", this.monthOfUsage, this.getYearOfUsage(), this.getUsage());
+        return String.format("(%s, \"%s\", %s, %s)", this.getCustomerId(), this.getMonthOfUsage(), this.getUsage(),
+                this.getYearOfUsage());
     }
 }

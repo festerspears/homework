@@ -85,7 +85,7 @@ Run fast tests (no repo, no integration) continuously.
 Run specific test file continuously.
 
 ```bash
-./gradlew -t <Name Of Test File> (e.g., CustomerUsageControllerTests)
+./gradlew -t test --tests <Name Of Test File> (e.g., CustomerUsageControllerTests)
 ```
 
 Build the project.
